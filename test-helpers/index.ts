@@ -386,6 +386,9 @@ export async function defineModels() {
     declare id: ModelIdType
 
     @column()
+    declare type: string
+
+    @column()
     declare slug: string
 
     @column()
@@ -402,6 +405,9 @@ export async function defineModels() {
 
     @column()
     declare scope: string
+
+    @column()
+    declare target: string
 
     @column.dateTime({ autoCreate: true })
     declare createdAt: DateTime
