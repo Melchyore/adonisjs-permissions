@@ -10,6 +10,8 @@ export interface AclModelInterface {
 export interface PermissionInterface extends AclModelInterface {
   id: ModelIdType
 
+  type: string | null
+
   slug: string
 
   title: string | null
@@ -21,6 +23,8 @@ export interface PermissionInterface extends AclModelInterface {
   allowed: boolean
 
   scope: string
+
+  target: string | null
 
   createdAt: DateTime
 
