@@ -1,5 +1,5 @@
 {
-  "name": "@holoyan/adonisjs-permissions",
+  "name": "@melchyore/adonisjs-permissions",
   "description": "Adonisjs roles and permissions system",
   "version": "1.0.2",
   "engines": {
@@ -57,6 +57,7 @@
     "chance": "^1.1.11",
     "copyfiles": "^2.4.1",
     "del-cli": "^5.0.0",
+    "dotenv": "^16.4.5",
     "eslint": "^8.38.0",
     "mssql": "^10.0.2",
     "mysql2": "^3.9.3",
@@ -71,9 +72,9 @@
   "peerDependencies": {
     "@adonisjs/core": "^6.2.0",
     "@adonisjs/lucid": "^21.0.0",
+    "@types/uuid": "^9.0.8",
     "luxon": "^3.4.4",
-    "uuid": "^9.0.1",
-    "@types/uuid": "^9.0.8"
+    "uuid": "^9.0.1"
   },
   "publishConfig": {
     "access": "public",
@@ -97,5 +98,8 @@
   "eslintConfig": {
     "extends": "@adonisjs/eslint-config/package"
   },
-  "prettier": "@adonisjs/prettier-config"
+  "prettier": "@adonisjs/prettier-config",
+  "dependencies": {
+    "@poppinss/hooks": "^7.2.4"
+  }
 }

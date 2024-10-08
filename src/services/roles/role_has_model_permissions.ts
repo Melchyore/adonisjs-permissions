@@ -52,6 +52,28 @@ export class RoleHasModelPermissions extends BaseAdapter {
     return this.permissionService.directGlobal(this.map.getAlias(this.role), this.role.getModelId())
   }
 
+  /**
+   * Get permission for a specific target
+   */
+  permissionsForTarget(target: string) {
+    return this.permissionService.forTarget(
+      this.map.getAlias(this.role),
+      this.role.getModelId(),
+      target
+    )
+  }
+
+  /**
+   * Get permission for a list of targets
+   */
+  permissionsForTargets(targets: string[]) {
+    return this.permissionService.forTargets(
+      this.map.getAlias(this.role),
+      this.role.getModelId(),
+      targets
+    )
+  }
+
   async onResourcePermissions() {
     return this.permissionService.directResource(
       this.map.getAlias(this.role),

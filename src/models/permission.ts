@@ -28,6 +28,9 @@ export default class Permission extends BaseModel implements PermissionInterface
   declare id: string
 
   @column()
+  declare type: string | null
+
+  @column()
   declare slug: string
 
   @column()
@@ -44,6 +47,9 @@ export default class Permission extends BaseModel implements PermissionInterface
 
   @column()
   declare scope: string
+
+  @column()
+  declare target: string | null
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

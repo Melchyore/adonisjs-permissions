@@ -106,6 +106,38 @@ export default class PermissionsService extends BaseService {
       .select(this.permissionTable + '.*')
   }
 
+  forTarget(
+    modelType: string,
+    modelId: ModelIdType,
+    target: string,
+    includeForbiddings: boolean = false
+  ) {
+    return this.modelPermissionQueryBuilder({
+      modelType,
+      modelId,
+      includeForbiddings,
+    })
+      .where(this.permissionTable + '.target', target)
+      .distinct(this.permissionTable + '.id')
+      .select(this.permissionTable + '.*')
+  }
+
+  forTargets(
+    modelType: string,
+    modelId: ModelIdType,
+    targets: string[],
+    includeForbiddings: boolean = false
+  ) {
+    return this.modelPermissionQueryBuilder({
+      modelType,
+      modelId,
+      includeForbiddings,
+    })
+      .whereIn(this.permissionTable + '.target', targets)
+      .distinct(this.permissionTable + '.id')
+      .select(this.permissionTable + '.*')
+  }
+
   async throughRoles(modelType: string, modelId: ModelIdType, includeForbiddings: boolean = false) {
     return this.modelPermissionQueryBuilder({
       modelType,

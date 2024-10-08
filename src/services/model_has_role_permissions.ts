@@ -115,6 +115,30 @@ export class ModelHasRolePermissions extends BaseAdapter {
   }
 
   /**
+   * Get permission for a specific target
+   */
+  permissionsForTarget(target: string, includeForbiddings: boolean = false) {
+    return this.permissionService.forTarget(
+      this.map.getAlias(this.model),
+      this.model.getModelId(),
+      target,
+      includeForbiddings
+    )
+  }
+
+  /**
+   * Get permission for a list of targets
+   */
+  permissionsForTargets(targets: string[], includeForbiddings: boolean = false) {
+    return this.permissionService.forTargets(
+      this.map.getAlias(this.model),
+      this.model.getModelId(),
+      targets,
+      includeForbiddings
+    )
+  }
+
+  /**
    * Get permission through roles
    * @param includeForbiddings
    */
